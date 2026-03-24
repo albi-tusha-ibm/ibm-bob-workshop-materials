@@ -161,46 +161,6 @@ See **[WORKSHOP_GUIDE.md](WORKSHOP_GUIDE.md)** for:
 
 ---
 
-### Module 3: Financial Services (Planned)
-**Status**: Coming in future release
-
-This module will cover financial services scenarios including trading systems, risk calculations, and regulatory compliance.
-
-## 🎓 Workshop Flow
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│ Introduction (5 min)                                        │
-│ • Workshop overview                                         │
-│ • Bob capabilities introduction                             │
-│ • Navigation and setup                                      │
-└─────────────────────────────────────────────────────────────┘
-                            ↓
-┌─────────────────────────────────────────────────────────────┐
-│ Module 1: Application Engineering (25 min)                  │
-│ • Search & navigate microservices codebase                  │
-│ • Analyze production logs and troubleshoot issues           │
-│ • Synthesize fragmented documentation                       │
-│ • Draft incident reports and postmortems                    │
-│ • Review code quality and architectural decisions           │
-└─────────────────────────────────────────────────────────────┘
-                            ↓
-┌─────────────────────────────────────────────────────────────┐
-│ Module 2: IT Infrastructure (15 min)                        │
-│ • Search infrastructure configs for security issues         │
-│ • Analyze capacity trends and alert patterns                │
-│ • Troubleshoot network outages and storage issues           │
-│ • Draft runbooks and incident reports                       │
-│ • Plan capacity expansion and improvements                  │
-└─────────────────────────────────────────────────────────────┘
-                            ↓
-┌─────────────────────────────────────────────────────────────┐
-│ Wrap-up & Q&A (5 min)                                       │
-│ • Key takeaways                                             │
-│ • Next steps and resources                                  │
-│ • Q&A and feedback                                          │
-└─────────────────────────────────────────────────────────────┘
-```
 
 ## 💡 Quick Navigation
 
