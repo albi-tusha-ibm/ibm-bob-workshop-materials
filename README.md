@@ -29,7 +29,6 @@ This 40-minute interactive workshop demonstrates Bob's capabilities across two e
 - **Application Engineer** (25 minutes)
 - **IT Infrastructure Engineer** (15 minutes)
 
-**Note:** Module 3 (Financial Services) is planned for future development.
 
 Each module includes real-world scenarios, sample codebases, and guided exercises that showcase Bob's ability to understand context, navigate complex systems, and provide intelligent assistance.
 
