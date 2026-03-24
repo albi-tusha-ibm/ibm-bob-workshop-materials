@@ -1,0 +1,29 @@
+2024-03-15 09:23:15.123 [http-nio-8082-exec-5] INFO  PaymentController [abc-123-def-456] - Received payment request for order: 550e8400-e29b-41d4-a716-446655440000
+2024-03-15 09:23:15.234 [http-nio-8082-exec-5] DEBUG PaymentProcessor [abc-123-def-456] - Calculating fraud score for payment
+2024-03-15 09:23:15.345 [http-nio-8082-exec-5] INFO  FraudDetection [abc-123-def-456] - Fraud score calculated: 25 for payment 660e8400-e29b-41d4-a716-446655440001
+2024-03-15 09:23:15.456 [http-nio-8082-exec-5] DEBUG PaymentProcessor [abc-123-def-456] - Calling payment gateway: https://api.stripeconnect.com
+2024-03-15 09:23:23.789 [http-nio-8082-exec-5] ERROR PaymentProcessor [abc-123-def-456] - Payment gateway timeout after 8333ms (configured: 5000ms)
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "https://api.stripeconnect.com/v1/charges": Read timed out
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
+	at com.enterprise.payments.PaymentProcessor.processPayment(PaymentProcessor.java:67)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:283)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309)
+2024-03-15 09:23:45.123 [http-nio-8082-exec-8] INFO  PaymentController [ghi-456-jkl-789] - Received payment request for order: 770e8400-e29b-41d4-a716-446655440002
+2024-03-15 09:23:45.234 [http-nio-8082-exec-8] DEBUG PaymentProcessor [ghi-456-jkl-789] - Calling payment gateway: https://api.stripeconnect.com
+2024-03-15 09:23:56.567 [http-nio-8082-exec-8] ERROR PaymentProcessor [ghi-456-jkl-789] - Payment gateway timeout after 11333ms (configured: 5000ms)
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "https://api.stripeconnect.com/v1/charges": Read timed out
+2024-03-15 09:24:12.345 [http-nio-8082-exec-11] INFO  PaymentController [mno-789-pqr-012] - Received payment request for order: 880e8400-e29b-41d4-a716-446655440003
+2024-03-15 09:24:12.456 [http-nio-8082-exec-11] DEBUG PaymentProcessor [mno-789-pqr-012] - Fraud score: 15
+2024-03-15 09:24:12.567 [http-nio-8082-exec-11] DEBUG PaymentProcessor [mno-789-pqr-012] - Calling payment gateway
+2024-03-15 09:24:14.789 [http-nio-8082-exec-11] INFO  PaymentProcessor [mno-789-pqr-012] - Payment gateway responded in 2222ms
+2024-03-15 09:24:14.890 [http-nio-8082-exec-11] INFO  PaymentProcessor [mno-789-pqr-012] - Payment completed successfully: txn_1234567890
+2024-03-15 09:24:45.123 [http-nio-8082-exec-14] INFO  PaymentController [stu-012-vwx-345] - Received payment request for order: 990e8400-e29b-41d4-a716-446655440004
+2024-03-15 09:24:45.234 [http-nio-8082-exec-14] DEBUG PaymentProcessor [stu-012-vwx-345] - Calling payment gateway
+2024-03-15 09:24:54.567 [http-nio-8082-exec-14] ERROR PaymentProcessor [stu-012-vwx-345] - Payment gateway timeout after 9333ms (configured: 5000ms)
+2024-03-15 09:25:23.456 [http-nio-8082-exec-17] INFO  PaymentController [yza-345-bcd-678] - Received payment request for order: aa0e8400-e29b-41d4-a716-446655440005
+2024-03-15 09:25:23.567 [http-nio-8082-exec-17] WARN  FraudDetection [yza-345-bcd-678] - High fraud score detected: 85
+2024-03-15 09:25:23.678 [http-nio-8082-exec-17] WARN  PaymentProcessor [yza-345-bcd-678] - Payment failed fraud check
+2024-03-15 09:25:45.789 [http-nio-8082-exec-20] INFO  PaymentController [efg-678-hij-901] - Received payment request for order: bb0e8400-e29b-41d4-a716-446655440006
+2024-03-15 09:25:45.890 [http-nio-8082-exec-20] DEBUG PaymentProcessor [efg-678-hij-901] - Calling payment gateway
+2024-03-15 09:25:58.123 [http-nio-8082-exec-20] ERROR PaymentProcessor [efg-678-hij-901] - Payment gateway timeout after 12233ms (configured: 5000ms)

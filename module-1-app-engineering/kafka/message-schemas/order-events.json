@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OrderEvent",
+  "type": "object",
+  "required": ["eventType", "orderId", "correlationId", "timestamp"],
+  "properties": {
+    "eventType": {
+      "type": "string",
+      "enum": ["order-created", "order-validated", "order-confirmed", "order-status-changed"]
+    },
+    "orderId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "orderNumber": {
+      "type": "string"
+    },
+    "customerId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["CREATED", "VALIDATED", "CONFIRMED", "SHIPPED", "DELIVERED", "CANCELLED"]
+    },
+    "totalAmount": {
+      "type": "number"
+    },
+    "correlationId": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

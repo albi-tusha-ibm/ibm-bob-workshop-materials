@@ -1,0 +1,31 @@
+openapi: 3.0.0
+info:
+  title: Payment Service API
+  version: 2.4.1
+  description: Payment processing API
+
+paths:
+  /payments:
+    post:
+      summary: Process payment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                orderId:
+                  type: string
+                  format: uuid
+                amount:
+                  type: number
+                paymentMethod:
+                  type: string
+      responses:
+        '200':
+          description: Payment processed
+        '402':
+          description: Payment failed
+        '504':
+          description: Gateway timeout

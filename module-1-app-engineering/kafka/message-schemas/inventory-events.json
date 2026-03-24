@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "InventoryEvent",
+  "type": "object",
+  "required": ["eventType", "productId", "correlationId"],
+  "properties": {
+    "eventType": {
+      "type": "string",
+      "enum": ["stock-reserved", "stock-released", "stock-updated"]
+    },
+    "productId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "correlationId": {
+      "type": "string"
+    }
+  }
+}

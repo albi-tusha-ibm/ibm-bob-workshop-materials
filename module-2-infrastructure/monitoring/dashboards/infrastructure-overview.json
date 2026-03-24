@@ -1,0 +1,117 @@
+{
+  "dashboard": {
+    "title": "Infrastructure Overview",
+    "tags": [
+      "infrastructure",
+      "monitoring"
+    ],
+    "timezone": "browser",
+    "panels": [
+      {
+        "id": 1,
+        "title": "CPU Usage by Server",
+        "type": "graph",
+        "gridPos": {
+          "x": 0,
+          "y": 0,
+          "w": 12,
+          "h": 8
+        },
+        "targets": [
+          {
+            "expr": "cpu_usage_percent",
+            "legendFormat": "{{instance}}"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Memory Usage by Server",
+        "type": "graph",
+        "gridPos": {
+          "x": 12,
+          "y": 0,
+          "w": 12,
+          "h": 8
+        },
+        "targets": [
+          {
+            "expr": "memory_usage_percent",
+            "legendFormat": "{{instance}}"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Disk Usage",
+        "type": "graph",
+        "gridPos": {
+          "x": 0,
+          "y": 8,
+          "w": 12,
+          "h": 8
+        },
+        "targets": [
+          {
+            "expr": "disk_usage_percent",
+            "legendFormat": "{{instance}}"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Network Traffic",
+        "type": "graph",
+        "gridPos": {
+          "x": 12,
+          "y": 8,
+          "w": 12,
+          "h": 8
+        },
+        "targets": [
+          {
+            "expr": "network_bytes_total",
+            "legendFormat": "{{instance}}"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Active Alerts",
+        "type": "stat",
+        "gridPos": {
+          "x": 0,
+          "y": 16,
+          "w": 6,
+          "h": 4
+        },
+        "targets": [
+          {
+            "expr": "count(ALERTS{alertstate='firing'})"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Service Uptime",
+        "type": "stat",
+        "gridPos": {
+          "x": 6,
+          "y": 16,
+          "w": 6,
+          "h": 4
+        },
+        "targets": [
+          {
+            "expr": "avg(up) * 100"
+          }
+        ]
+      }
+    ],
+    "refresh": "30s",
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    }
+  }
+}

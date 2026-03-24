@@ -1,0 +1,20 @@
+# Distributed Tracing
+tracing:
+  enabled: true
+  sampling-rate: 0.1  # 10% of requests
+  backend: jaeger
+  jaeger:
+    endpoint: http://jaeger-collector:14268/api/traces
+
+# Metrics
+metrics:
+  enabled: true
+  prometheus:
+    scrape-interval: 15s
+    retention: 15d
+    
+# Logging
+logging:
+  access-logs: true
+  format: json
+  level: info

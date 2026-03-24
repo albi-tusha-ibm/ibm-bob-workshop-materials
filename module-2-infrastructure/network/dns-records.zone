@@ -1,0 +1,74 @@
+$ORIGIN globaltech.com.
+$TTL 3600
+
+; SOA Record
+@       IN      SOA     ns1.globaltech.com. admin.globaltech.com. (
+                        2024032001  ; Serial
+                        7200        ; Refresh
+                        3600        ; Retry
+                        1209600     ; Expire
+                        3600 )      ; Minimum TTL
+
+; Name Servers
+@       IN      NS      ns1.globaltech.com.
+@       IN      NS      ns2.globaltech.com.
+
+; A Records - Name Servers
+ns1     IN      A       203.0.113.10
+ns2     IN      A       198.51.100.10
+
+; A Records - Web Tier
+www     IN      A       10.0.1.100
+web-01  IN      A       10.0.11.10
+web-02  IN      A       10.0.11.20
+web-03  IN      A       10.0.11.30
+web-04  IN      A       10.0.12.10
+web-05  IN      A       10.0.12.20
+
+; A Records - Application Tier
+app-01  IN      A       10.0.11.40
+app-02  IN      A       10.0.11.50
+app-03  IN      A       10.0.12.30
+app-04  IN      A       10.0.12.40
+app-05  IN      A       10.0.13.10
+app-06  IN      A       10.0.13.20
+
+; A Records - Database Tier
+db-primary      IN      A       10.0.21.10
+db-replica      IN      A       10.0.22.10
+db-master       IN      CNAME   db-primary
+db-slave        IN      CNAME   db-replica
+
+; A Records - Infrastructure
+bastion         IN      A       10.0.1.10
+prometheus      IN      A       10.0.11.100
+grafana         IN      A       10.0.11.101
+lb-prod-01      IN      A       10.0.1.100
+lb-prod-02      IN      A       10.0.1.101
+
+; CNAME Records
+api             IN      CNAME   www
+portal          IN      CNAME   www
+admin           IN      CNAME   www
+monitoring      IN      CNAME   grafana
+metrics         IN      CNAME   prometheus
+
+; MX Records
+@       IN      MX      10      mail1.globaltech.com.
+@       IN      MX      20      mail2.globaltech.com.
+
+mail1   IN      A       203.0.113.50
+mail2   IN      A       198.51.100.50
+
+; TXT Records
+@       IN      TXT     "v=spf1 mx a:mail1.globaltech.com a:mail2.globaltech.com -all"
+_dmarc  IN      TXT     "v=DMARC1; p=quarantine; rua=mailto:dmarc@globaltech.com"
+
+; SRV Records
+_http._tcp      IN      SRV     0 5 80 www.globaltech.com.
+_https._tcp     IN      SRV     0 5 443 www.globaltech.com.
+
+; PTR Records (Reverse DNS)
+; These would be in separate reverse zone files
+
+; End of Zone File

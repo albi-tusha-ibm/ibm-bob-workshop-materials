@@ -1,0 +1,27 @@
+groups:
+  - name: order-service-alerts
+    interval: 30s
+    rules:
+      - alert: HighErrorRate
+        expr: rate(http_requests_total{status=~"5.."}[5m]) > 0.05
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High error rate detected"
+          
+      - alert: HighMemoryUsage
+        expr: container_memory_usage_bytes{pod=~"order-service.*"} > 7000000000
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Order service memory usage high"
+          
+      - alert: KafkaConsumerLag
+        expr: kafka_consumer_lag > 10000
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Kafka consumer lag exceeds threshold"

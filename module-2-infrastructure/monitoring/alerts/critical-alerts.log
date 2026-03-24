@@ -1,0 +1,250 @@
+[2026-03-09 19:45:33] [CRITICAL] [web-04] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-03-07 19:45:33] [HIGH] [web-03] SERVICE_DOWN: Critical service is not responding
+[2026-02-26 18:45:33] [HIGH] [app-05] DATABASE_SLOW: Database query response time > 5s
+[2026-03-08 18:45:33] [CRITICAL] [app-05] SERVICE_DOWN: Critical service is not responding
+[2026-02-24 16:45:33] [CRITICAL] [app-05] SERVICE_DOWN: Critical service is not responding
+[2026-02-24 00:45:33] [HIGH] [app-05] DATABASE_SLOW: Database query response time > 5s
+[2026-02-24 01:45:33] [CRITICAL] [app-05] DATABASE_SLOW: Database query response time > 5s
+[2026-03-21 22:45:33] [CRITICAL] [db-primary] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-18 03:45:33] [CRITICAL] [web-04] SERVICE_DOWN: Critical service is not responding
+[2026-03-21 20:45:33] [CRITICAL] [app-06] BACKUP_FAILED: Automated backup job failed
+[2026-03-18 02:45:33] [CRITICAL] [app-03] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-03-12 20:45:33] [CRITICAL] [app-03] BACKUP_FAILED: Automated backup job failed
+[2026-03-02 04:45:33] [CRITICAL] [web-04] DATABASE_SLOW: Database query response time > 5s
+[2026-03-19 23:45:33] [CRITICAL] [db-primary] DATABASE_SLOW: Database query response time > 5s
+[2026-03-10 23:45:33] [HIGH] [app-05] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-03-13 09:45:33] [CRITICAL] [web-02] BACKUP_FAILED: Automated backup job failed
+[2026-02-24 09:45:33] [CRITICAL] [web-02] CPU_HIGH: CPU utilization exceeded 90%
+[2026-03-18 19:45:33] [HIGH] [web-01] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-03-21 10:45:33] [CRITICAL] [web-03] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-03-17 13:45:33] [CRITICAL] [app-01] SERVICE_DOWN: Critical service is not responding
+[2026-03-04 11:45:33] [CRITICAL] [web-01] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-03-15 21:45:33] [HIGH] [app-05] DATABASE_SLOW: Database query response time > 5s
+[2026-03-05 15:45:33] [CRITICAL] [web-04] SERVICE_DOWN: Critical service is not responding
+[2026-03-18 15:45:33] [CRITICAL] [db-primary] DISK_FULL: Disk usage exceeded 90%
+[2026-02-27 12:45:33] [HIGH] [app-01] CPU_HIGH: CPU utilization exceeded 90%
+[2026-02-27 19:45:33] [CRITICAL] [app-01] CPU_HIGH: CPU utilization exceeded 90%
+[2026-02-28 02:45:33] [CRITICAL] [web-04] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-03-03 17:45:33] [HIGH] [db-replica] SERVICE_DOWN: Critical service is not responding
+[2026-03-12 17:45:33] [CRITICAL] [app-05] SERVICE_DOWN: Critical service is not responding
+[2026-02-27 16:45:33] [HIGH] [db-replica] CPU_HIGH: CPU utilization exceeded 90%
+[2026-02-24 12:45:33] [CRITICAL] [app-02] DATABASE_SLOW: Database query response time > 5s
+[2026-03-03 04:45:33] [CRITICAL] [app-04] CPU_HIGH: CPU utilization exceeded 90%
+[2026-03-05 05:45:33] [CRITICAL] [app-05] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-03-21 08:45:33] [HIGH] [web-02] DISK_FULL: Disk usage exceeded 90%
+[2026-03-05 01:45:33] [CRITICAL] [web-01] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-03-19 16:45:33] [HIGH] [web-03] DATABASE_SLOW: Database query response time > 5s
+[2026-03-22 15:45:33] [CRITICAL] [web-03] DISK_FULL: Disk usage exceeded 90%
+[2026-03-04 17:45:33] [CRITICAL] [app-05] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-02-28 12:45:33] [CRITICAL] [app-02] CPU_HIGH: CPU utilization exceeded 90%
+[2026-02-23 06:45:33] [CRITICAL] [app-03] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-03-18 02:45:33] [CRITICAL] [app-03] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-05 23:45:33] [HIGH] [db-primary] DISK_FULL: Disk usage exceeded 90%
+[2026-02-28 16:45:33] [CRITICAL] [app-04] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-10 20:45:33] [CRITICAL] [app-06] BACKUP_FAILED: Automated backup job failed
+[2026-03-02 04:45:33] [HIGH] [db-primary] SERVICE_DOWN: Critical service is not responding
+[2026-03-21 18:45:33] [CRITICAL] [app-06] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-02-26 21:45:33] [CRITICAL] [app-01] DATABASE_SLOW: Database query response time > 5s
+[2026-03-18 06:45:33] [CRITICAL] [app-03] DISK_FULL: Disk usage exceeded 90%
+[2026-03-22 16:45:33] [HIGH] [web-05] DISK_FULL: Disk usage exceeded 90%
+[2026-03-12 03:45:33] [HIGH] [web-04] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-03-10 17:45:33] [HIGH] [app-04] DISK_FULL: Disk usage exceeded 90%
+[2026-02-28 16:45:33] [HIGH] [db-primary] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-03-24 01:45:33] [CRITICAL] [app-03] CPU_HIGH: CPU utilization exceeded 90%
+[2026-03-17 10:45:33] [CRITICAL] [app-03] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-15 05:45:33] [CRITICAL] [web-04] CPU_HIGH: CPU utilization exceeded 90%
+[2026-03-12 06:45:33] [CRITICAL] [app-01] CPU_HIGH: CPU utilization exceeded 90%
+[2026-03-08 13:45:33] [CRITICAL] [web-02] DISK_FULL: Disk usage exceeded 90%
+[2026-03-04 13:45:33] [HIGH] [app-01] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-06 17:45:33] [CRITICAL] [app-02] DISK_FULL: Disk usage exceeded 90%
+[2026-03-08 17:45:33] [CRITICAL] [app-03] CPU_HIGH: CPU utilization exceeded 90%
+[2026-02-28 17:45:33] [CRITICAL] [app-05] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-03-04 21:45:33] [CRITICAL] [app-03] CPU_HIGH: CPU utilization exceeded 90%
+[2026-02-26 01:45:33] [CRITICAL] [app-04] DISK_FULL: Disk usage exceeded 90%
+[2026-02-27 08:45:33] [CRITICAL] [app-04] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-02 17:45:33] [CRITICAL] [web-01] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-24 01:45:33] [CRITICAL] [db-primary] BACKUP_FAILED: Automated backup job failed
+[2026-03-18 05:45:33] [HIGH] [db-replica] DATABASE_SLOW: Database query response time > 5s
+[2026-03-17 10:45:33] [CRITICAL] [web-05] DISK_FULL: Disk usage exceeded 90%
+[2026-02-27 17:45:33] [CRITICAL] [app-05] DISK_FULL: Disk usage exceeded 90%
+[2026-03-15 19:45:33] [CRITICAL] [app-06] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-03-07 18:45:33] [HIGH] [app-04] SERVICE_DOWN: Critical service is not responding
+[2026-02-28 08:45:33] [CRITICAL] [web-04] SERVICE_DOWN: Critical service is not responding
+[2026-03-17 20:45:33] [CRITICAL] [db-replica] CPU_HIGH: CPU utilization exceeded 90%
+[2026-02-26 19:45:33] [CRITICAL] [db-replica] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-03-10 08:45:33] [CRITICAL] [web-05] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-11 12:45:33] [CRITICAL] [db-replica] DISK_FULL: Disk usage exceeded 90%
+[2026-03-18 21:45:33] [HIGH] [db-replica] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-02-28 07:45:33] [HIGH] [web-04] DISK_FULL: Disk usage exceeded 90%
+[2026-03-13 20:45:33] [CRITICAL] [web-03] CPU_HIGH: CPU utilization exceeded 90%
+[2026-03-20 05:45:33] [HIGH] [web-03] DATABASE_SLOW: Database query response time > 5s
+[2026-03-14 01:45:33] [HIGH] [web-02] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-03-22 15:45:33] [CRITICAL] [web-05] DISK_FULL: Disk usage exceeded 90%
+[2026-03-13 18:45:33] [HIGH] [web-02] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-03-04 05:45:33] [HIGH] [app-04] DISK_FULL: Disk usage exceeded 90%
+[2026-03-14 17:45:33] [HIGH] [web-03] BACKUP_FAILED: Automated backup job failed
+[2026-02-23 03:45:33] [CRITICAL] [app-02] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-03-17 20:45:33] [CRITICAL] [app-03] BACKUP_FAILED: Automated backup job failed
+[2026-03-07 18:45:33] [CRITICAL] [web-01] DATABASE_SLOW: Database query response time > 5s
+[2026-03-09 22:45:33] [CRITICAL] [web-02] SERVICE_DOWN: Critical service is not responding
+[2026-02-23 23:45:33] [HIGH] [app-01] DISK_FULL: Disk usage exceeded 90%
+[2026-03-19 19:45:33] [CRITICAL] [web-05] DISK_FULL: Disk usage exceeded 90%
+[2026-03-06 08:45:33] [CRITICAL] [db-replica] DATABASE_SLOW: Database query response time > 5s
+[2026-03-11 14:45:33] [CRITICAL] [app-02] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-03-03 10:45:33] [CRITICAL] [app-06] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-02-26 21:45:33] [CRITICAL] [db-replica] SERVICE_DOWN: Critical service is not responding
+[2026-03-01 11:45:33] [HIGH] [app-06] CPU_HIGH: CPU utilization exceeded 90%
+[2026-03-06 16:45:33] [HIGH] [web-01] BACKUP_FAILED: Automated backup job failed
+[2026-03-15 21:45:33] [CRITICAL] [web-03] SERVICE_DOWN: Critical service is not responding
+[2026-03-20 20:45:33] [CRITICAL] [app-02] DATABASE_SLOW: Database query response time > 5s
+[2026-02-25 12:45:33] [HIGH] [app-04] CPU_HIGH: CPU utilization exceeded 90%
+[2026-03-03 15:45:33] [CRITICAL] [app-03] DATABASE_SLOW: Database query response time > 5s
+[2026-02-22 19:45:33] [HIGH] [web-03] SERVICE_DOWN: Critical service is not responding
+[2026-02-27 15:45:33] [CRITICAL] [web-01] DATABASE_SLOW: Database query response time > 5s
+[2026-03-03 15:45:33] [HIGH] [app-05] DATABASE_SLOW: Database query response time > 5s
+[2026-03-18 12:45:33] [CRITICAL] [web-03] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-02-26 04:45:33] [CRITICAL] [app-01] BACKUP_FAILED: Automated backup job failed
+[2026-03-11 16:45:33] [CRITICAL] [app-02] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-03-23 11:45:33] [CRITICAL] [app-01] CPU_HIGH: CPU utilization exceeded 90%
+[2026-02-23 12:45:33] [HIGH] [app-06] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-03-12 05:45:33] [HIGH] [app-01] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-03-20 21:45:33] [CRITICAL] [web-03] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-05 12:45:33] [HIGH] [app-05] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-03-23 10:45:33] [CRITICAL] [app-05] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-16 02:45:33] [HIGH] [app-02] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-03-21 03:45:33] [HIGH] [web-02] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-03 19:45:33] [CRITICAL] [web-04] BACKUP_FAILED: Automated backup job failed
+[2026-02-23 09:45:33] [CRITICAL] [app-05] CPU_HIGH: CPU utilization exceeded 90%
+[2026-03-03 14:45:33] [HIGH] [app-05] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-03-07 01:45:33] [HIGH] [app-02] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-02-24 20:45:33] [CRITICAL] [web-05] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-02-24 02:45:33] [CRITICAL] [web-01] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-24 06:45:33] [CRITICAL] [app-01] DATABASE_SLOW: Database query response time > 5s
+[2026-02-25 22:45:33] [HIGH] [app-04] DISK_FULL: Disk usage exceeded 90%
+[2026-03-15 21:45:33] [CRITICAL] [web-02] CPU_HIGH: CPU utilization exceeded 90%
+[2026-03-11 20:45:33] [CRITICAL] [web-01] CPU_HIGH: CPU utilization exceeded 90%
+[2026-03-12 08:45:33] [CRITICAL] [db-primary] SERVICE_DOWN: Critical service is not responding
+[2026-03-23 22:45:33] [CRITICAL] [web-01] CPU_HIGH: CPU utilization exceeded 90%
+[2026-03-10 13:45:33] [HIGH] [web-01] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-03-05 22:45:33] [CRITICAL] [web-05] BACKUP_FAILED: Automated backup job failed
+[2026-03-14 14:45:33] [CRITICAL] [app-06] DISK_FULL: Disk usage exceeded 90%
+[2026-02-25 11:45:33] [HIGH] [app-06] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-19 21:45:33] [HIGH] [app-05] DISK_FULL: Disk usage exceeded 90%
+[2026-02-24 12:45:33] [CRITICAL] [app-05] SERVICE_DOWN: Critical service is not responding
+[2026-03-01 16:45:33] [CRITICAL] [db-primary] DISK_FULL: Disk usage exceeded 90%
+[2026-02-28 16:45:33] [CRITICAL] [app-02] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-09 08:45:33] [CRITICAL] [web-01] CPU_HIGH: CPU utilization exceeded 90%
+[2026-03-17 15:45:33] [CRITICAL] [app-06] DISK_FULL: Disk usage exceeded 90%
+[2026-03-11 04:45:33] [CRITICAL] [db-replica] DATABASE_SLOW: Database query response time > 5s
+[2026-03-12 17:45:33] [HIGH] [app-03] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-18 21:45:33] [CRITICAL] [app-03] DATABASE_SLOW: Database query response time > 5s
+[2026-03-15 22:45:33] [CRITICAL] [app-01] BACKUP_FAILED: Automated backup job failed
+[2026-03-23 07:45:33] [CRITICAL] [db-primary] SERVICE_DOWN: Critical service is not responding
+[2026-02-22 18:45:33] [CRITICAL] [app-06] BACKUP_FAILED: Automated backup job failed
+[2026-02-26 05:45:33] [CRITICAL] [app-05] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-14 09:45:33] [CRITICAL] [db-primary] SERVICE_DOWN: Critical service is not responding
+[2026-03-11 20:45:33] [CRITICAL] [app-04] BACKUP_FAILED: Automated backup job failed
+[2026-03-08 05:45:33] [HIGH] [app-05] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-03-12 10:45:33] [CRITICAL] [app-03] BACKUP_FAILED: Automated backup job failed
+[2026-03-20 15:45:33] [CRITICAL] [db-replica] SERVICE_DOWN: Critical service is not responding
+[2026-03-08 15:45:33] [HIGH] [web-05] BACKUP_FAILED: Automated backup job failed
+[2026-03-20 08:45:33] [CRITICAL] [web-04] DATABASE_SLOW: Database query response time > 5s
+[2026-03-01 00:45:33] [HIGH] [web-02] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-03-10 15:45:33] [CRITICAL] [app-03] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-03-20 05:45:33] [CRITICAL] [web-04] DISK_FULL: Disk usage exceeded 90%
+[2026-03-06 14:45:33] [CRITICAL] [app-04] DISK_FULL: Disk usage exceeded 90%
+[2026-03-17 10:45:33] [CRITICAL] [web-04] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-03-13 17:45:33] [HIGH] [app-01] BACKUP_FAILED: Automated backup job failed
+[2026-03-06 09:45:33] [HIGH] [app-01] DISK_FULL: Disk usage exceeded 90%
+[2026-02-27 02:45:33] [CRITICAL] [web-01] CPU_HIGH: CPU utilization exceeded 90%
+[2026-03-09 21:45:33] [CRITICAL] [db-replica] SERVICE_DOWN: Critical service is not responding
+[2026-03-19 12:45:33] [HIGH] [app-03] SERVICE_DOWN: Critical service is not responding
+[2026-03-03 14:45:33] [HIGH] [app-05] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-03-22 04:45:33] [CRITICAL] [web-02] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-03-05 23:45:33] [CRITICAL] [web-01] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-03-13 19:45:33] [CRITICAL] [app-02] CPU_HIGH: CPU utilization exceeded 90%
+[2026-02-26 23:45:33] [CRITICAL] [app-04] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-03-10 05:45:33] [CRITICAL] [db-replica] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-17 11:45:33] [CRITICAL] [web-04] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-03-18 08:45:33] [CRITICAL] [app-06] DATABASE_SLOW: Database query response time > 5s
+[2026-03-18 15:45:33] [HIGH] [app-01] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-03-05 21:45:33] [CRITICAL] [app-05] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-03-16 13:45:33] [CRITICAL] [db-primary] CPU_HIGH: CPU utilization exceeded 90%
+[2026-03-08 17:45:33] [CRITICAL] [web-04] CPU_HIGH: CPU utilization exceeded 90%
+[2026-02-28 08:45:33] [CRITICAL] [app-02] DATABASE_SLOW: Database query response time > 5s
+[2026-03-20 04:45:33] [CRITICAL] [web-03] SERVICE_DOWN: Critical service is not responding
+[2026-03-22 12:45:33] [HIGH] [web-01] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-24 01:45:33] [HIGH] [web-03] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-15 03:45:33] [CRITICAL] [app-04] DISK_FULL: Disk usage exceeded 90%
+[2026-03-03 17:45:33] [CRITICAL] [app-02] BACKUP_FAILED: Automated backup job failed
+[2026-03-08 08:45:33] [CRITICAL] [web-05] SERVICE_DOWN: Critical service is not responding
+[2026-03-15 10:45:33] [CRITICAL] [app-02] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-21 08:45:33] [HIGH] [web-03] CPU_HIGH: CPU utilization exceeded 90%
+[2026-03-11 11:45:33] [CRITICAL] [web-03] DISK_FULL: Disk usage exceeded 90%
+[2026-03-13 08:45:33] [HIGH] [web-01] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-03-15 07:45:33] [CRITICAL] [app-05] BACKUP_FAILED: Automated backup job failed
+[2026-03-22 11:45:33] [CRITICAL] [web-01] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-24 06:45:33] [HIGH] [app-04] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-02-26 16:45:33] [CRITICAL] [db-primary] DISK_FULL: Disk usage exceeded 90%
+[2026-03-04 13:45:33] [CRITICAL] [app-06] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-16 15:45:33] [CRITICAL] [web-03] DISK_FULL: Disk usage exceeded 90%
+[2026-03-09 16:45:33] [HIGH] [app-03] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-03-12 16:45:33] [HIGH] [app-03] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-03-19 22:45:33] [CRITICAL] [app-04] DISK_FULL: Disk usage exceeded 90%
+[2026-02-25 05:45:33] [HIGH] [app-01] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-19 02:45:33] [CRITICAL] [web-05] SERVICE_DOWN: Critical service is not responding
+[2026-03-22 04:45:33] [CRITICAL] [app-05] CPU_HIGH: CPU utilization exceeded 90%
+[2026-03-15 07:45:33] [CRITICAL] [db-replica] DATABASE_SLOW: Database query response time > 5s
+[2026-03-22 06:45:33] [HIGH] [app-01] SERVICE_DOWN: Critical service is not responding
+[2026-03-04 08:45:33] [CRITICAL] [app-03] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-19 08:45:33] [CRITICAL] [web-01] DATABASE_SLOW: Database query response time > 5s
+[2026-03-20 14:45:33] [HIGH] [app-02] DISK_FULL: Disk usage exceeded 90%
+[2026-03-08 04:45:33] [CRITICAL] [db-replica] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-02-25 03:45:33] [CRITICAL] [app-06] DATABASE_SLOW: Database query response time > 5s
+[2026-03-22 22:45:33] [HIGH] [db-primary] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-03-21 19:45:33] [CRITICAL] [app-05] SERVICE_DOWN: Critical service is not responding
+[2026-03-21 10:45:33] [HIGH] [web-01] DATABASE_SLOW: Database query response time > 5s
+[2026-03-07 00:45:33] [CRITICAL] [app-03] DATABASE_SLOW: Database query response time > 5s
+[2026-03-18 19:45:33] [CRITICAL] [app-05] DATABASE_SLOW: Database query response time > 5s
+[2026-03-20 00:45:33] [HIGH] [web-05] DATABASE_SLOW: Database query response time > 5s
+[2026-03-11 17:45:33] [CRITICAL] [web-05] DISK_FULL: Disk usage exceeded 90%
+[2026-03-10 03:45:33] [CRITICAL] [web-04] DISK_FULL: Disk usage exceeded 90%
+[2026-03-06 12:45:33] [CRITICAL] [app-05] CPU_HIGH: CPU utilization exceeded 90%
+[2026-02-25 20:45:33] [CRITICAL] [web-02] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-14 11:45:33] [CRITICAL] [app-03] CPU_HIGH: CPU utilization exceeded 90%
+[2026-03-08 10:45:33] [CRITICAL] [web-03] DATABASE_SLOW: Database query response time > 5s
+[2026-03-07 23:45:33] [CRITICAL] [app-01] DATABASE_SLOW: Database query response time > 5s
+[2026-02-22 21:45:33] [HIGH] [web-03] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-17 15:45:33] [CRITICAL] [app-05] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-03-10 16:45:33] [CRITICAL] [app-03] DATABASE_SLOW: Database query response time > 5s
+[2026-03-08 11:45:33] [CRITICAL] [web-05] BACKUP_FAILED: Automated backup job failed
+[2026-03-17 03:45:33] [HIGH] [web-04] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-06 02:45:33] [HIGH] [web-03] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-03-23 09:45:33] [CRITICAL] [app-03] DATABASE_SLOW: Database query response time > 5s
+[2026-02-26 10:45:33] [CRITICAL] [app-03] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-03-03 14:45:33] [CRITICAL] [db-primary] CPU_HIGH: CPU utilization exceeded 90%
+[2026-03-01 13:45:33] [CRITICAL] [app-04] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-02-28 06:45:33] [CRITICAL] [app-01] DISK_FULL: Disk usage exceeded 90%
+[2026-02-25 08:45:33] [CRITICAL] [app-01] BACKUP_FAILED: Automated backup job failed
+[2026-03-20 02:45:33] [CRITICAL] [web-03] DISK_FULL: Disk usage exceeded 90%
+[2026-03-19 14:45:33] [CRITICAL] [web-01] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-03-21 15:45:33] [HIGH] [app-03] SERVICE_DOWN: Critical service is not responding
+[2026-03-19 02:45:33] [CRITICAL] [web-02] CPU_HIGH: CPU utilization exceeded 90%
+[2026-03-02 02:45:33] [CRITICAL] [db-primary] CPU_HIGH: CPU utilization exceeded 90%
+[2026-03-07 20:45:33] [HIGH] [app-05] BACKUP_FAILED: Automated backup job failed
+[2026-03-01 00:45:33] [HIGH] [db-primary] DISK_FULL: Disk usage exceeded 90%
+[2026-03-11 05:45:33] [HIGH] [app-05] SERVICE_DOWN: Critical service is not responding
+[2026-03-09 09:45:33] [HIGH] [web-01] BACKUP_FAILED: Automated backup job failed
+[2026-02-25 04:45:33] [HIGH] [db-primary] SERVICE_DOWN: Critical service is not responding
+[2026-03-11 03:45:33] [HIGH] [web-01] NETWORK_LATENCY: Network latency exceeded threshold
+[2026-03-13 16:45:33] [CRITICAL] [app-04] DATABASE_SLOW: Database query response time > 5s
+[2026-02-26 15:45:33] [CRITICAL] [app-04] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-02-24 17:45:33] [CRITICAL] [app-01] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-24 05:45:33] [CRITICAL] [web-05] BACKUP_FAILED: Automated backup job failed
+[2026-03-11 03:45:33] [HIGH] [web-03] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-03-08 09:45:33] [CRITICAL] [db-primary] SERVICE_DOWN: Critical service is not responding
+[2026-03-03 10:45:33] [HIGH] [app-05] MEMORY_HIGH: Memory utilization exceeded 85%
+[2026-03-06 02:45:33] [HIGH] [app-04] BACKUP_FAILED: Automated backup job failed
+[2026-02-25 16:45:33] [CRITICAL] [app-05] BACKUP_FAILED: Automated backup job failed
+[2026-03-21 03:45:33] [CRITICAL] [db-replica] SSL_EXPIRING: SSL certificate expires in < 30 days
+[2026-03-16 20:45:33] [CRITICAL] [web-03] SSL_EXPIRING: SSL certificate expires in < 30 days

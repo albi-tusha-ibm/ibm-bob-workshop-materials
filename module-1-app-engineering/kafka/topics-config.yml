@@ -1,0 +1,24 @@
+topics:
+  - name: order-events
+    partitions: 12
+    replication-factor: 3
+    config:
+      retention.ms: 604800000  # 7 days
+      compression.type: snappy
+      min.insync.replicas: 2
+      
+  - name: payment-events
+    partitions: 8
+    replication-factor: 3
+    config:
+      retention.ms: 604800000
+      compression.type: snappy
+      min.insync.replicas: 2
+      
+  - name: inventory-events
+    partitions: 6
+    replication-factor: 3
+    config:
+      retention.ms: 604800000
+      compression.type: snappy
+      min.insync.replicas: 2

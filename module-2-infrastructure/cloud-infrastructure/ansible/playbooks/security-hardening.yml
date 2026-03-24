@@ -1,0 +1,124 @@
+---
+- name: Security Hardening
+  hosts: all
+  become: yes
+  
+  tasks:
+    - name: Update all packages
+      yum:
+        name: '*'
+        state: latest
+        security: yes
+      tags: [security, updates]
+    
+    - name: Install security tools
+      yum:
+        name:
+          - aide
+          - fail2ban
+          - rkhunter
+          - lynis
+          - audit
+        state: present
+      tags: [security, packages]
+    
+    - name: Configure SSH hardening
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: "{{ item.regexp }}"
+        line: "{{ item.line }}"
+        state: present
+      loop:
+        - { regexp: '^PermitRootLogin', line: 'PermitRootLogin no' }
+        - { regexp: '^PasswordAuthentication', line: 'PasswordAuthentication no' }
+        - { regexp: '^X11Forwarding', line: 'X11Forwarding no' }
+        - { regexp: '^MaxAuthTries', line: 'MaxAuthTries 3' }
+        - { regexp: '^ClientAliveInterval', line: 'ClientAliveInterval 300' }
+        - { regexp: '^ClientAliveCountMax', line: 'ClientAliveCountMax 2' }
+      notify: restart sshd
+      tags: [security, ssh]
+    
+    - name: Configure firewall default policies
+      firewalld:
+        state: enabled
+        permanent: yes
+      tags: [security, firewall]
+    
+    - name: Disable unnecessary services
+      systemd:
+        name: "{{ item }}"
+        enabled: no
+        state: stopped
+      loop:
+        - postfix
+        - cups
+      ignore_errors: yes
+      tags: [security, services]
+    
+    - name: Set file permissions on sensitive files
+      file:
+        path: "{{ item }}"
+        mode: '0600'
+        owner: root
+        group: root
+      loop:
+        - /etc/ssh/sshd_config
+        - /etc/shadow
+        - /etc/gshadow
+      tags: [security, permissions]
+    
+    - name: Configure auditd rules
+      copy:
+        content: |
+          -w /etc/passwd -p wa -k passwd_changes
+          -w /etc/group -p wa -k group_changes
+          -w /etc/shadow -p wa -k shadow_changes
+          -w /etc/sudoers -p wa -k sudoers_changes
+          -w /var/log/lastlog -p wa -k logins
+          -w /var/run/faillock/ -p wa -k logins
+        dest: /etc/audit/rules.d/hardening.rules
+        owner: root
+        group: root
+        mode: '0640'
+      notify: restart auditd
+      tags: [security, audit]
+    
+    - name: Initialize AIDE database
+      command: aide --init
+      args:
+        creates: /var/lib/aide/aide.db.new.gz
+      tags: [security, aide]
+    
+    - name: Configure fail2ban
+      template:
+        src: ../templates/jail.local.j2
+        dest: /etc/fail2ban/jail.local
+        owner: root
+        group: root
+        mode: '0644'
+      notify: restart fail2ban
+      tags: [security, fail2ban]
+    
+    - name: Enable and start security services
+      systemd:
+        name: "{{ item }}"
+        enabled: yes
+        state: started
+      loop:
+        - auditd
+        - fail2ban
+      tags: [security, services]
+  
+  handlers:
+    - name: restart sshd
+      systemd:
+        name: sshd
+        state: restarted
+    
+    - name: restart auditd
+      command: service auditd restart
+    
+    - name: restart fail2ban
+      systemd:
+        name: fail2ban
+        state: restarted

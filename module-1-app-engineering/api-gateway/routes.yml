@@ -1,0 +1,29 @@
+routes:
+  - id: order-service
+    uri: http://order-service:8080
+    predicates:
+      - Path=/api/v1/orders/**
+    filters:
+      - StripPrefix=0
+      - name: CircuitBreaker
+        args:
+          name: orderServiceCircuitBreaker
+          fallbackUri: forward:/fallback/orders
+          
+  - id: payment-service
+    uri: http://payment-service:8080
+    predicates:
+      - Path=/api/v1/payments/**
+    filters:
+      - StripPrefix=0
+      - name: CircuitBreaker
+        args:
+          name: paymentServiceCircuitBreaker
+          fallbackUri: forward:/fallback/payments
+          
+  - id: inventory-service
+    uri: http://inventory-service:8080
+    predicates:
+      - Path=/api/v1/inventory/**
+    filters:
+      - StripPrefix=0

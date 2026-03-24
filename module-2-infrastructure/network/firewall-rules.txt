@@ -1,0 +1,134 @@
+# GlobalTech Enterprise Firewall Rules
+# Last Updated: 2024-03-20
+# Managed by: Infrastructure Team
+
+# ============================================
+# INBOUND RULES
+# ============================================
+
+# Rule 1: Allow HTTP from Internet to Web Tier
+ALLOW TCP 0.0.0.0/0 -> 10.0.11.0/24 PORT 80 PRIORITY 100
+
+# Rule 2: Allow HTTPS from Internet to Web Tier
+ALLOW TCP 0.0.0.0/0 -> 10.0.11.0/24 PORT 443 PRIORITY 100
+
+# Rule 3: Allow SSH from Corporate Network
+ALLOW TCP 203.0.113.0/24 -> 10.0.0.0/16 PORT 22 PRIORITY 200
+
+# Rule 4: Allow SSH from Bastion
+ALLOW TCP 10.0.1.10/32 -> 10.0.0.0/16 PORT 22 PRIORITY 150
+
+# Rule 5: Allow Application Traffic from Web to App Tier
+ALLOW TCP 10.0.11.0/24 -> 10.0.12.0/24 PORT 8080 PRIORITY 300
+
+# Rule 6: Allow Database Traffic from App to DB Tier
+ALLOW TCP 10.0.12.0/24 -> 10.0.21.0/24 PORT 5432 PRIORITY 300
+
+# Rule 7: Allow MySQL from App to DB Tier
+ALLOW TCP 10.0.12.0/24 -> 10.0.21.0/24 PORT 3306 PRIORITY 300
+
+# Rule 8: Allow Monitoring from Prometheus
+ALLOW TCP 10.0.11.100/32 -> 10.0.0.0/16 PORT 9100 PRIORITY 400
+
+# Rule 9: Allow VPN from Dallas DC
+ALLOW UDP 203.0.113.10/32 -> 10.0.0.0/16 PORT 500,4500 PRIORITY 500
+
+# Rule 10: Allow VPN from London DC
+ALLOW UDP 198.51.100.10/32 -> 10.0.0.0/16 PORT 500,4500 PRIORITY 500
+
+# Rule 11: Allow VPN from Singapore DC
+ALLOW UDP 192.0.2.10/32 -> 10.0.0.0/16 PORT 500,4500 PRIORITY 500
+
+# Rule 12: Allow NTP
+ALLOW UDP 0.0.0.0/0 -> 10.0.0.0/16 PORT 123 PRIORITY 600
+
+# Rule 13: Allow DNS
+ALLOW UDP 0.0.0.0/0 -> 10.0.0.0/16 PORT 53 PRIORITY 600
+
+# Rule 14: Allow ICMP (Ping)
+ALLOW ICMP 10.0.0.0/16 -> 10.0.0.0/16 PRIORITY 700
+
+# Rule 15: Allow Load Balancer Health Checks
+ALLOW TCP 10.0.1.0/24 -> 10.0.11.0/24 PORT 80,443 PRIORITY 250
+
+# ============================================
+# OUTBOUND RULES
+# ============================================
+
+# Rule 20: Allow HTTP/HTTPS to Internet
+ALLOW TCP 10.0.0.0/16 -> 0.0.0.0/0 PORT 80,443 PRIORITY 100
+
+# Rule 21: Allow DNS to Internet
+ALLOW UDP 10.0.0.0/16 -> 0.0.0.0/0 PORT 53 PRIORITY 100
+
+# Rule 22: Allow NTP to Internet
+ALLOW UDP 10.0.0.0/16 -> 0.0.0.0/0 PORT 123 PRIORITY 100
+
+# Rule 23: Allow Email (SMTP)
+ALLOW TCP 10.0.0.0/16 -> 0.0.0.0/0 PORT 25,587 PRIORITY 200
+
+# Rule 24: Allow S3 Access
+ALLOW TCP 10.0.0.0/16 -> 52.216.0.0/15 PORT 443 PRIORITY 300
+
+# ============================================
+# SECURITY RULES
+# ============================================
+
+# Rule 30: Block SSH from Internet (SECURITY)
+DENY TCP 0.0.0.0/0 -> 10.0.0.0/16 PORT 22 PRIORITY 50
+
+# Rule 31: Block RDP from Internet (SECURITY)
+DENY TCP 0.0.0.0/0 -> 10.0.0.0/16 PORT 3389 PRIORITY 50
+
+# Rule 32: Block Telnet (SECURITY)
+DENY TCP 0.0.0.0/0 -> 10.0.0.0/16 PORT 23 PRIORITY 50
+
+# Rule 33: Block FTP (SECURITY)
+DENY TCP 0.0.0.0/0 -> 10.0.0.0/16 PORT 20,21 PRIORITY 50
+
+# Rule 34: Block SMB (SECURITY)
+DENY TCP 0.0.0.0/0 -> 10.0.0.0/16 PORT 445,139 PRIORITY 50
+
+# Rule 35: Block Database Ports from Internet (SECURITY)
+DENY TCP 0.0.0.0/0 -> 10.0.0.0/16 PORT 3306,5432,1433,27017 PRIORITY 50
+
+# ============================================
+# INTER-TIER RULES
+# ============================================
+
+# Rule 40: Allow Web to App Communication
+ALLOW TCP 10.0.11.0/24 -> 10.0.12.0/24 PORT 8080,8443 PRIORITY 300
+
+# Rule 41: Allow App to Database Communication
+ALLOW TCP 10.0.12.0/24 -> 10.0.21.0/24 PORT 5432,3306 PRIORITY 300
+
+# Rule 42: Allow App to Cache (Redis)
+ALLOW TCP 10.0.12.0/24 -> 10.0.13.0/24 PORT 6379 PRIORITY 300
+
+# Rule 43: Allow App to Message Queue (RabbitMQ)
+ALLOW TCP 10.0.12.0/24 -> 10.0.13.0/24 PORT 5672 PRIORITY 300
+
+# Rule 44: Deny Direct Web to Database (SECURITY)
+DENY TCP 10.0.11.0/24 -> 10.0.21.0/24 PORT 5432,3306 PRIORITY 250
+
+# ============================================
+# LOGGING AND MONITORING
+# ============================================
+
+# Rule 50: Allow Syslog
+ALLOW UDP 10.0.0.0/16 -> 10.0.11.101/32 PORT 514 PRIORITY 400
+
+# Rule 51: Allow SNMP Monitoring
+ALLOW UDP 10.0.11.100/32 -> 10.0.0.0/16 PORT 161 PRIORITY 400
+
+# Rule 52: Allow CloudWatch Agent
+ALLOW TCP 10.0.0.0/16 -> 0.0.0.0/0 PORT 443 PRIORITY 400
+
+# ============================================
+# DEFAULT DENY
+# ============================================
+
+# Rule 999: Default Deny All
+DENY ALL 0.0.0.0/0 -> 0.0.0.0/0 PRIORITY 999
+
+# End of Firewall Rules

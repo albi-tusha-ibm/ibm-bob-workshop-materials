@@ -1,0 +1,51 @@
+2024-03-15 09:15:23.456 [http-nio-8081-exec-12] ERROR OrderService [abc-def-123-456] - Failed to create order
+java.lang.NullPointerException: Cannot invoke "com.enterprise.orders.model.OrderItem.getProductId()" because "item" is null
+	at com.enterprise.orders.OrderService.validateOrder(OrderService.java:145)
+	at com.enterprise.orders.OrderController.createOrder(OrderController.java:67)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2024-03-15 09:15:45.789 [http-nio-8081-exec-15] WARN  OrderService [def-456-789-abc] - Order cache size: 45200, ID cache size: 45200
+2024-03-15 09:16:12.345 [http-nio-8081-exec-18] INFO  OrderService [ghi-789-012-def] - Creating order for customer: 550e8400-e29b-41d4-a716-446655440000
+2024-03-15 09:16:12.567 [http-nio-8081-exec-18] INFO  OrderService [ghi-789-012-def] - Order created successfully: ORD-2024-03-15-7891
+2024-03-15 09:16:45.123 [kafka-consumer-1] ERROR KafkaConsumer [jkl-012-345-ghi] - Error processing order event
+org.springframework.dao.DataAccessResourceFailureException: Unable to acquire JDBC Connection
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:82)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.beginTransaction(HibernateJpaDialect.java:103)
+Caused by: java.sql.SQLTransientConnectionException: HikariPool-1 - Connection is not available, request timed out after 30000ms.
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:197)
+2024-03-15 09:17:23.456 [http-nio-8081-exec-22] ERROR OrderController [mno-345-678-jkl] - Unexpected error
+java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3720)
+	at java.base/java.util.HashMap.resize(HashMap.java:699)
+	at com.enterprise.orders.OrderService.cacheOrder(OrderService.java:234)
+2024-03-15 09:17:45.789 [GC task thread#0] WARN  GC - GC pause (G1 Evacuation Pause) 487ms
+2024-03-15 09:18:12.345 [http-nio-8081-exec-25] INFO  OrderService [pqr-678-901-mno] - Validating order: 660e8400-e29b-41d4-a716-446655440001
+2024-03-15 09:18:13.567 [http-nio-8081-exec-25] WARN  OrderService [pqr-678-901-mno] - Validation checks taking longer than expected: 1222ms
+2024-03-15 09:18:45.123 [kafka-consumer-2] WARN  KafkaConsumer - Consumer lag detected: 52341 messages behind
+2024-03-15 09:19:23.456 [http-nio-8081-exec-28] ERROR OrderService [stu-901-234-pqr] - Failed to validate order
+java.util.concurrent.TimeoutException: Validation timeout after 30000ms
+	at com.enterprise.orders.OrderService.performValidationChecks(OrderService.java:289)
+	at com.enterprise.orders.OrderService.validateOrder(OrderService.java:156)
+2024-03-15 09:19:45.789 [http-nio-8081-exec-31] INFO  OrderController [vwx-234-567-stu] - Received request to create order for customer: 770e8400-e29b-41d4-a716-446655440002
+2024-03-15 09:20:12.345 [GC task thread#1] WARN  GC - GC pause (G1 Evacuation Pause) 523ms
+2024-03-15 09:20:45.123 [http-nio-8081-exec-34] WARN  OrderService [yza-567-890-vwx] - Order cache size: 48700, ID cache size: 48700
+2024-03-15 09:21:23.456 [kafka-consumer-3] ERROR KafkaConsumer [bcd-890-123-yza] - Deserialization error
+org.apache.kafka.common.errors.SerializationException: Error deserializing key/value for partition order-events-5 at offset 123456
+Caused by: com.fasterxml.jackson.databind.JsonMappingException: Unexpected character ('}' (code 125)): expected a value
+	at [Source: (byte[])"{"eventType":"order-created","orderId":}"; line: 1, column: 45]
+2024-03-15 09:21:45.789 [http-nio-8081-exec-37] INFO  OrderService [efg-123-456-bcd] - Order validated successfully: ORD-2024-03-15-7892
+2024-03-15 09:22:12.345 [http-nio-8081-exec-40] ERROR OrderController [hij-456-789-efg] - Failed to update order status
+java.lang.IllegalStateException: Can only confirm orders in VALIDATED status
+	at com.enterprise.orders.model.Order.markAsConfirmed(Order.java:178)
+	at com.enterprise.orders.OrderService.confirmOrder(OrderService.java:201)
+2024-03-15 09:22:45.123 [kafka-consumer-4] WARN  KafkaConsumer - Rebalancing consumer group order-service-group
+2024-03-15 09:23:23.456 [http-nio-8081-exec-43] INFO  OrderService [klm-789-012-hij] - Confirming order: 880e8400-e29b-41d4-a716-446655440003 with payment: 990e8400-e29b-41d4-a716-446655440004
+2024-03-15 09:23:45.789 [GC task thread#2] WARN  GC - GC pause (G1 Full GC) 1245ms
+2024-03-15 09:24:12.345 [http-nio-8081-exec-46] WARN  OrderService [nop-012-345-klm] - Order cache size: 51200, ID cache size: 51200
+2024-03-15 09:24:45.123 [kafka-consumer-5] ERROR KafkaConsumer [qrs-345-678-nop] - Consumer poll timeout exceeded
+org.apache.kafka.clients.consumer.CommitFailedException: Commit cannot be completed since the group has already rebalanced
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.sendOffsetCommitRequest(ConsumerCoordinator.java:1234)
+2024-03-15 09:25:23.456 [http-nio-8081-exec-49] ERROR OrderService [tuv-678-901-qrs] - Failed to create order: Database connection timeout
+2024-03-15 09:25:45.789 [http-nio-8081-exec-52] INFO  OrderController [wxy-901-234-tuv] - Order created successfully: ORD-2024-03-15-7893
+2024-03-15 09:26:12.345 [GC task thread#3] ERROR GC - OutOfMemoryError: Java heap space
+2024-03-15 09:26:45.123 [main] ERROR Application - Application shutting down due to OutOfMemoryError

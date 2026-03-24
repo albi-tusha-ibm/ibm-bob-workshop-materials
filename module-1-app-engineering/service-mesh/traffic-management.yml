@@ -1,0 +1,31 @@
+# Circuit Breaker Configuration
+circuit-breakers:
+  order-service:
+    consecutive-errors: 5
+    interval: 30s
+    base-ejection-time: 30s
+    max-ejection-percent: 50
+    
+  payment-service:
+    consecutive-errors: 3
+    interval: 20s
+    base-ejection-time: 60s
+    max-ejection-percent: 30
+
+# Retry Configuration  
+retries:
+  order-service:
+    attempts: 3
+    per-try-timeout: 10s
+    retry-on: 5xx,reset,connect-failure
+    
+  payment-service:
+    attempts: 2
+    per-try-timeout: 5s
+    retry-on: 5xx,reset
+
+# Timeout Configuration
+timeouts:
+  order-service: 30s
+  payment-service: 10s
+  inventory-service: 15s

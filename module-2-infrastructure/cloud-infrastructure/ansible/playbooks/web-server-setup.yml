@@ -1,0 +1,198 @@
+---
+- name: Configure Web Servers
+  hosts: web_servers
+  become: yes
+  vars:
+    app_user: webapp
+    app_port: 80
+    document_root: /var/www/html
+    ssl_cert_path: /etc/ssl/certs
+    
+  tasks:
+    - name: Update system packages
+      yum:
+        name: '*'
+        state: latest
+        update_cache: yes
+      tags: [system, updates]
+    
+    - name: Install required packages
+      yum:
+        name:
+          - httpd
+          - mod_ssl
+          - python3
+          - python3-pip
+          - git
+          - wget
+          - curl
+          - vim
+          - htop
+          - net-tools
+        state: present
+      tags: [packages]
+    
+    - name: Create application user
+      user:
+        name: "{{ app_user }}"
+        system: yes
+        shell: /bin/bash
+        home: /opt/webapp
+        create_home: yes
+      tags: [users]
+    
+    - name: Configure Apache
+      template:
+        src: ../templates/httpd.conf.j2
+        dest: /etc/httpd/conf/httpd.conf
+        owner: root
+        group: root
+        mode: '0644'
+      notify: restart apache
+      tags: [apache, config]
+    
+    - name: Create virtual host configuration
+      template:
+        src: ../templates/vhost.conf.j2
+        dest: /etc/httpd/conf.d/webapp.conf
+        owner: root
+        group: root
+        mode: '0644'
+      notify: restart apache
+      tags: [apache, vhost]
+    
+    - name: Configure SSL
+      copy:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+        owner: root
+        group: root
+        mode: '0600'
+      loop:
+        - { src: '../files/ssl/server.crt', dest: '{{ ssl_cert_path }}/server.crt' }
+        - { src: '../files/ssl/server.key', dest: '{{ ssl_cert_path }}/server.key' }
+      notify: restart apache
+      tags: [ssl]
+    
+    - name: Create document root
+      file:
+        path: "{{ document_root }}"
+        state: directory
+        owner: "{{ app_user }}"
+        group: "{{ app_user }}"
+        mode: '0755'
+      tags: [filesystem]
+    
+    - name: Deploy application files
+      synchronize:
+        src: ../files/webapp/
+        dest: "{{ document_root }}/"
+        delete: yes
+        recursive: yes
+      notify: restart apache
+      tags: [deploy]
+    
+    - name: Set proper permissions on web files
+      file:
+        path: "{{ document_root }}"
+        owner: "{{ app_user }}"
+        group: apache
+        mode: '0755'
+        recurse: yes
+      tags: [permissions]
+    
+    - name: Configure firewall
+      firewalld:
+        service: "{{ item }}"
+        permanent: yes
+        state: enabled
+        immediate: yes
+      loop:
+        - http
+        - https
+      tags: [firewall]
+    
+    - name: Install CloudWatch agent
+      yum:
+        name: amazon-cloudwatch-agent
+        state: present
+      tags: [monitoring]
+    
+    - name: Configure CloudWatch agent
+      template:
+        src: ../templates/cloudwatch-config.json.j2
+        dest: /opt/aws/amazon-cloudwatch-agent/etc/config.json
+        owner: root
+        group: root
+        mode: '0644'
+      notify: restart cloudwatch agent
+      tags: [monitoring]
+    
+    - name: Enable and start Apache
+      systemd:
+        name: httpd
+        enabled: yes
+        state: started
+      tags: [services]
+    
+    - name: Enable and start CloudWatch agent
+      systemd:
+        name: amazon-cloudwatch-agent
+        enabled: yes
+        state: started
+      tags: [services, monitoring]
+    
+    - name: Configure log rotation
+      template:
+        src: ../templates/logrotate-httpd.j2
+        dest: /etc/logrotate.d/httpd
+        owner: root
+        group: root
+        mode: '0644'
+      tags: [logging]
+    
+    - name: Install monitoring scripts
+      copy:
+        src: "{{ item }}"
+        dest: /usr/local/bin/
+        owner: root
+        group: root
+        mode: '0755'
+      loop:
+        - ../files/scripts/health-check.sh
+        - ../files/scripts/metrics-collector.sh
+      tags: [monitoring, scripts]
+    
+    - name: Configure cron jobs for monitoring
+      cron:
+        name: "{{ item.name }}"
+        minute: "{{ item.minute }}"
+        job: "{{ item.job }}"
+        user: root
+      loop:
+        - { name: 'Health check', minute: '*/5', job: '/usr/local/bin/health-check.sh' }
+        - { name: 'Metrics collection', minute: '*/1', job: '/usr/local/bin/metrics-collector.sh' }
+      tags: [monitoring, cron]
+    
+    - name: Verify Apache is responding
+      uri:
+        url: "http://localhost/"
+        status_code: 200
+      register: result
+      until: result.status == 200
+      retries: 5
+      delay: 10
+      tags: [verify]
+  
+  handlers:
+    - name: restart apache
+      systemd:
+        name: httpd
+        state: restarted
+    
+    - name: restart cloudwatch agent
+      systemd:
+        name: amazon-cloudwatch-agent
+        state: restarted
+
+# Made with Bob

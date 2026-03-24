@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: payment-service
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/payments_db
+    username: payments_user
+    password: ${DB_PASSWORD:payments_pass}
+
+server:
+  port: 8082
+
+payment:
+  gateway:
+    url: https://api.stripeconnect.com
+    timeout: 5000
+
+logging:
+  level:
+    root: INFO
+    com.enterprise.payments: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} [%X{correlationId}] - %msg%n"

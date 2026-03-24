@@ -1,0 +1,19 @@
+date,server,patch_id,description,severity,status,installed_by,reboot_required
+2024-03-18,web-01,KB5035857,Security Update for OpenSSL,Critical,Installed,automation,Yes
+2024-03-18,web-02,KB5035857,Security Update for OpenSSL,Critical,Installed,automation,Yes
+2024-03-17,app-01,KB5035845,Linux Kernel Security Update,Critical,Installed,automation,Yes
+2024-03-17,app-02,KB5035845,Linux Kernel Security Update,Critical,Failed,automation,Yes
+2024-03-16,db-primary,PG-2024-001,PostgreSQL Security Patch,Critical,Installed,dba_team,No
+2024-03-16,db-replica,PG-2024-001,PostgreSQL Security Patch,Critical,Installed,dba_team,No
+2024-03-15,web-03,APACHE-2024-03,Apache HTTP Server Update,High,Installed,automation,Yes
+2024-03-15,web-04,APACHE-2024-03,Apache HTTP Server Update,High,Installed,automation,Yes
+2024-03-15,web-05,APACHE-2024-03,Apache HTTP Server Update,High,Pending,automation,Yes
+2024-03-14,app-03,SUDO-2024-001,Sudo Privilege Escalation Fix,High,Installed,automation,No
+2024-03-14,app-04,SUDO-2024-001,Sudo Privilege Escalation Fix,High,Installed,automation,No
+2024-03-14,app-05,SUDO-2024-001,Sudo Privilege Escalation Fix,High,Installed,automation,No
+2024-03-13,web-01,OPENSSH-2024-02,OpenSSH Security Update,High,Installed,automation,Yes
+2024-03-13,web-02,OPENSSH-2024-02,OpenSSH Security Update,High,Installed,automation,Yes
+2024-03-12,app-06,KB5035820,Java Security Update,Medium,Installed,automation,No
+2024-03-11,bastion,KB5035810,System Security Update,Medium,Installed,sysadmin,Yes
+2024-03-10,prometheus,PROM-2024-01,Prometheus Security Patch,Low,Installed,monitoring_team,No
+2024-03-10,grafana,GRAF-2024-01,Grafana Security Update,Low,Installed,monitoring_team,No

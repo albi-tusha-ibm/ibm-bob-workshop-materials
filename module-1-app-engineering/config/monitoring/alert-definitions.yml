@@ -1,0 +1,15 @@
+alerts:
+  - name: payment-timeout
+    condition: payment_duration_seconds > 5
+    severity: critical
+    notification: pagerduty
+    
+  - name: order-service-down
+    condition: up{job="order-service"} == 0
+    severity: critical
+    notification: pagerduty
+    
+  - name: high-kafka-lag
+    condition: kafka_consumer_lag > 50000
+    severity: critical
+    notification: slack

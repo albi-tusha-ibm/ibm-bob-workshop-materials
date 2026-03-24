@@ -1,0 +1,15 @@
+rate-limiting:
+  - path: /api/v1/orders
+    limit: 1000
+    period: 60s
+    burst: 100
+    
+  - path: /api/v1/payments
+    limit: 500
+    period: 60s
+    burst: 50
+    
+  - path: /api/v1/inventory
+    limit: 2000
+    period: 60s
+    burst: 200

@@ -1,0 +1,125 @@
+# Alert Rules Configuration for GlobalTech Infrastructure
+
+groups:
+  - name: infrastructure_alerts
+    interval: 30s
+    rules:
+      - alert: HighCPUUsage
+        expr: cpu_usage_percent > 80
+        for: 5m
+        labels:
+          severity: warning
+          component: compute
+        annotations:
+          summary: "High CPU usage on {{ $labels.instance }}"
+          description: "CPU usage is {{ $value }}% on {{ $labels.instance }}"
+      
+      - alert: CriticalCPUUsage
+        expr: cpu_usage_percent > 90
+        for: 2m
+        labels:
+          severity: critical
+          component: compute
+        annotations:
+          summary: "Critical CPU usage on {{ $labels.instance }}"
+          description: "CPU usage is {{ $value }}% on {{ $labels.instance }}"
+      
+      - alert: HighMemoryUsage
+        expr: memory_usage_percent > 85
+        for: 5m
+        labels:
+          severity: warning
+          component: memory
+        annotations:
+          summary: "High memory usage on {{ $labels.instance }}"
+          description: "Memory usage is {{ $value }}% on {{ $labels.instance }}"
+      
+      - alert: CriticalMemoryUsage
+        expr: memory_usage_percent > 95
+        for: 2m
+        labels:
+          severity: critical
+          component: memory
+        annotations:
+          summary: "Critical memory usage on {{ $labels.instance }}"
+          description: "Memory usage is {{ $value }}% on {{ $labels.instance }}"
+      
+      - alert: DiskSpaceWarning
+        expr: disk_usage_percent > 90
+        for: 10m
+        labels:
+          severity: warning
+          component: storage
+        annotations:
+          summary: "Disk space warning on {{ $labels.instance }}"
+          description: "Disk usage is {{ $value }}% on {{ $labels.instance }}"
+      
+      - alert: DiskSpaceCritical
+        expr: disk_usage_percent > 95
+        for: 5m
+        labels:
+          severity: critical
+          component: storage
+        annotations:
+          summary: "Critical disk space on {{ $labels.instance }}"
+          description: "Disk usage is {{ $value }}% on {{ $labels.instance }}"
+      
+      - alert: ServiceDown
+        expr: up == 0
+        for: 1m
+        labels:
+          severity: critical
+          component: availability
+        annotations:
+          summary: "Service down: {{ $labels.job }}"
+          description: "{{ $labels.job }} on {{ $labels.instance }} is down"
+      
+      - alert: HighNetworkLatency
+        expr: network_latency_ms > 100
+        for: 5m
+        labels:
+          severity: warning
+          component: network
+        annotations:
+          summary: "High network latency on {{ $labels.instance }}"
+          description: "Network latency is {{ $value }}ms on {{ $labels.instance }}"
+      
+      - alert: DatabaseSlowQueries
+        expr: database_query_duration_seconds > 5
+        for: 2m
+        labels:
+          severity: warning
+          component: database
+        annotations:
+          summary: "Slow database queries detected"
+          description: "Query duration is {{ $value }}s on {{ $labels.instance }}"
+      
+      - alert: BackupFailure
+        expr: backup_last_success_timestamp < (time() - 86400)
+        for: 1m
+        labels:
+          severity: critical
+          component: backup
+        annotations:
+          summary: "Backup failure detected"
+          description: "Last successful backup was more than 24 hours ago"
+      
+      - alert: SSLCertificateExpiring
+        expr: ssl_certificate_expiry_days < 30
+        for: 1h
+        labels:
+          severity: warning
+          component: security
+        annotations:
+          summary: "SSL certificate expiring soon"
+          description: "SSL certificate expires in {{ $value }} days"
+      
+      - alert: LoadBalancerUnhealthy
+        expr: lb_healthy_targets / lb_total_targets < 0.5
+        for: 2m
+        labels:
+          severity: critical
+          component: load_balancer
+        annotations:
+          summary: "Load balancer has unhealthy targets"
+          description: "Only {{ $value }}% of targets are healthy"

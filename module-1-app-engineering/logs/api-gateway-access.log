@@ -1,0 +1,10 @@
+2024-03-15 09:15:00.123 [gateway-worker-1] INFO  192.168.1.100 - - [15/Mar/2024:09:15:00 +0000] "POST /api/v1/orders HTTP/1.1" 201 456 "-" "Mozilla/5.0" 234ms
+2024-03-15 09:15:01.234 [gateway-worker-2] INFO  192.168.1.101 - - [15/Mar/2024:09:15:01 +0000] "GET /api/v1/orders/550e8400-e29b-41d4-a716-446655440000 HTTP/1.1" 200 789 "-" "curl/7.68.0" 45ms
+2024-03-15 09:15:02.345 [gateway-worker-3] ERROR 192.168.1.102 - - [15/Mar/2024:09:15:02 +0000] "POST /api/v1/payments HTTP/1.1" 504 0 "-" "axios/0.21.1" 8333ms
+2024-03-15 09:15:03.456 [gateway-worker-4] INFO  192.168.1.103 - - [15/Mar/2024:09:15:03 +0000] "GET /api/v1/inventory/health HTTP/1.1" 200 45 "-" "k8s-probe" 12ms
+2024-03-15 09:15:04.567 [gateway-worker-5] ERROR 192.168.1.104 - - [15/Mar/2024:09:15:04 +0000] "POST /api/v1/orders HTTP/1.1" 500 123 "-" "Mozilla/5.0" 567ms
+2024-03-15 09:15:05.678 [gateway-worker-6] WARN  192.168.1.105 - - [15/Mar/2024:09:15:05 +0000] "PUT /api/v1/orders/660e8400-e29b-41d4-a716-446655440001/status HTTP/1.1" 409 234 "-" "axios/0.21.1" 123ms
+2024-03-15 09:15:06.789 [gateway-worker-7] ERROR 192.168.1.106 - - [15/Mar/2024:09:15:06 +0000] "POST /api/v1/payments HTTP/1.1" 503 0 "-" "axios/0.21.1" 5001ms
+2024-03-15 09:15:07.890 [gateway-worker-8] INFO  192.168.1.107 - - [15/Mar/2024:09:15:07 +0000] "GET /api/v1/orders/customer/770e8400-e29b-41d4-a716-446655440002 HTTP/1.1" 200 1234 "-" "Mozilla/5.0" 234ms
+2024-03-15 09:15:08.901 [gateway-worker-9] ERROR 192.168.1.108 - - [15/Mar/2024:09:15:08 +0000] "POST /api/v1/orders/880e8400-e29b-41d4-a716-446655440003/confirm HTTP/1.1" 500 89 "-" "axios/0.21.1" 456ms
+2024-03-15 09:15:09.012 [gateway-worker-10] INFO  192.168.1.109 - - [15/Mar/2024:09:15:09 +0000] "GET /api/v1/orders/health HTTP/1.1" 200 67 "-" "k8s-probe" 8ms

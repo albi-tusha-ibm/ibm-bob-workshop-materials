@@ -1,0 +1,27 @@
+openapi: 3.0.0
+info:
+  title: Inventory Service API
+  version: 1.8.2
+  description: Inventory management API
+
+paths:
+  /inventory/reserve:
+    post:
+      summary: Reserve stock
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                productId:
+                  type: string
+                  format: uuid
+                quantity:
+                  type: integer
+      responses:
+        '200':
+          description: Stock reserved
+        '409':
+          description: Insufficient stock

@@ -1,0 +1,23 @@
+2024-03-15 09:15:00.000 [kafka-consumer-1] INFO  KafkaConsumer - Starting Kafka consumer for group: order-service-group
+2024-03-15 09:15:00.123 [kafka-consumer-1] INFO  KafkaConsumer - Subscribed to topics: [order-events]
+2024-03-15 09:15:01.234 [kafka-consumer-1] INFO  KafkaConsumer - Consumer group rebalanced. Assigned partitions: [order-events-0, order-events-1, order-events-2]
+2024-03-15 09:15:05.345 [kafka-consumer-1] DEBUG KafkaConsumer - Processing message from partition order-events-0, offset 123450
+2024-03-15 09:15:05.456 [kafka-consumer-1] DEBUG KafkaConsumer - Message processed successfully in 111ms
+2024-03-15 09:15:10.567 [kafka-consumer-1] WARN  KafkaConsumer - Slow message processing detected: 1234ms for offset 123451
+2024-03-15 09:15:15.678 [kafka-consumer-1] ERROR KafkaConsumer - Error processing message at offset 123452
+org.springframework.dao.QueryTimeoutException: Query timeout after 5000ms
+	at com.enterprise.orders.OrderService.performValidationChecks(OrderService.java:289)
+2024-03-15 09:15:20.789 [kafka-consumer-1] WARN  KafkaConsumer - Consumer lag detected: 15234 messages behind on partition order-events-0
+2024-03-15 09:15:25.890 [kafka-consumer-1] WARN  KafkaConsumer - Consumer lag detected: 18456 messages behind on partition order-events-1
+2024-03-15 09:15:30.901 [kafka-consumer-1] WARN  KafkaConsumer - Consumer lag detected: 21789 messages behind on partition order-events-2
+2024-03-15 09:15:35.012 [kafka-consumer-1] ERROR KafkaConsumer - Deserialization error at offset 123455
+com.fasterxml.jackson.databind.JsonMappingException: Cannot deserialize value of type `java.util.UUID` from String "invalid-uuid"
+2024-03-15 09:15:40.123 [kafka-coordinator] INFO  KafkaCoordinator - Consumer group rebalancing triggered
+2024-03-15 09:15:45.234 [kafka-consumer-1] WARN  KafkaConsumer - Rebalancing in progress, pausing consumption
+2024-03-15 09:15:50.345 [kafka-consumer-1] INFO  KafkaConsumer - Rebalance completed. New partition assignment: [order-events-0, order-events-1]
+2024-03-15 09:15:55.456 [kafka-consumer-1] WARN  KafkaConsumer - Consumer lag increased to 45678 messages
+2024-03-15 09:16:00.567 [kafka-consumer-1] ERROR KafkaConsumer - Failed to commit offsets
+org.apache.kafka.clients.consumer.CommitFailedException: Commit cannot be completed since the group has already rebalanced
+2024-03-15 09:16:05.678 [kafka-consumer-1] WARN  KafkaConsumer - Slow database queries blocking consumer thread
+2024-03-15 09:16:10.789 [kafka-consumer-1] DEBUG KafkaConsumer - Processing message took 2345ms (threshold: 1000ms)
+2024-03-15 09:16:15.890 [kafka-consumer-1] WARN  KafkaConsumer - Consumer lag now at 52341 messages
